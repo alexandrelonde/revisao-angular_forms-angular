@@ -8,6 +8,7 @@ import { DataFormComponent } from './components/data-form/data-form.component';
 import { TemplateFormModule } from './components/template-form/template-form.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,3 +24,15 @@ import { TemplateFormModule } from './components/template-form/template-form.mod
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/*
+  Ao criarmos componentes que vão funcionar de maneira segmentada,
+  ao invés de colocarmos o mesmo direto aqui, colocamos o mesmo no
+  seu common module e colocamos o common module aqui.
+
+  Os components a serem visualizados pelo commmon module irão no
+  common mudule (vamos chamar o common module de submodulo)
+
+  component específico -> submodulo -> app.module
+
+*/

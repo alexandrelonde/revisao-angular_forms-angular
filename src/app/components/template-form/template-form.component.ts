@@ -15,13 +15,13 @@ export class TemplateFormComponent {
 
   constructor(){
     // mostra os valores do objetos antes do método onSubmit
-    console.log('Valor do Objeto: ');
+    console.log('Valor do Objeto - constructor ');
     console.log(this.usuario);
   }
 
   onSubmit(form: NgForm) {
     // mostra os valores da propriedade usuario
-    console.log('Valor do Objeto: ');
+    console.log('Valor do Objeto - onSubmit ');
     console.log(this.usuario);
 
     // mostra os valores dos campos do formulário
