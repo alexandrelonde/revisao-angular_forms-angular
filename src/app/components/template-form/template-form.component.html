@@ -32,7 +32,10 @@
   <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
 
   <hr>
-  <app-form-debug></app-form-debug>
+
+  <!-- component apenas para teste, para verificar os dados  -->
+  <!-- Usando um property binding para comunicação do valor da variável -->
+  <app-form-debug [form]="f" ></app-form-debug>
 
 </form>
 
