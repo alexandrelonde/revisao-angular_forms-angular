@@ -1,42 +1,98 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
   <div class="form-group" [class.has-error]="!nome.valid && nome.touched">
-    <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" name="nome" id="nome"
-      placeholder="Nome" [ngModel]="usuario.nome" required #nome="ngModel"
-    >
+    <div class="col-sm-12">
+      <label for="nome" class="form-label">Nome</label>
+    </div>
 
-    <!--
-      <div>
-        {{nome.className}}
+    <div class="col-sm-12">
+      <input
+        type="text"
+        class="form-control"
+        name="nome"
+        id="nome"
+        placeholder="Nome"
+        [ngModel]="usuario.nome"
+        required
+        #nome="ngModel"
+      />
+
+      <!--
+        <div>
+          {{nome.className}}
+        </div>
+      -->
+
+      <!-- Se estabelecer a condição, mostrará a mensagem-->
+      <div
+        *ngIf="!nome.valid && nome.touched"
+        class="alert alert-danger"
+        role="alert"
+      >
+        Nome é obrigatório!
       </div>
-    -->
-
-    <!-- Se estabelecer a condição, mostrará a mensagem-->
-    <div *ngIf="!nome.valid && nome.touched" class="alert alert-danger" role="alert">
-      Nome é obrigatório!
     </div>
   </div>
 
   <div class="form-group" [class.has-error]="!email.valid && email.touched">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control"  name="email" id="email"
-      placeholder="nome@email.com" [ngModel]="usuario.email"
-      required email #email="ngModel"
-    >
-    <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
-      E-mail é obrigatório!
+    <div class="col-sm-12">
+      <label for="email" class="form-label">Email</label>
+    </div>
+
+    <div class="col-sm-12">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        placeholder="nome@email.com"
+        [ngModel]="usuario.email"
+        required
+        email
+        #email="ngModel"
+      />
+      <div
+        *ngIf="!email.valid && email.touched"
+        class="alert alert-danger"
+        role="alert"
+      >
+        E-mail é obrigatório!
+      </div>
     </div>
   </div>
-  <br>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
+  <div class="form-group">
+    <div class="col-md-3">
+      <label for="cep" class="control-label">CEP</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cep"
+        name="cep"
+        ngModel
+        required
+        #cep="ngModel"
+      />
+      <div
+        *ngIf="!cep.valid && cep.touched"
+        class="alert alert-danger"
+        role="alert"
+      >
+        CEP é obrigatório!
+      </div>
+    </div>
+  </div>
 
-  <hr>
+  <br />
+
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+    Submit
+  </button>
+
+  <hr />
 
   <!-- component apenas para teste, para verificar os dados  -->
   <!-- Usando um property binding para comunicação do valor da variável -->
-  <app-form-debug [form]="f" ></app-form-debug>
-
+  <app-form-debug [form]="f"></app-form-debug>
 </form>
 
 <!--
