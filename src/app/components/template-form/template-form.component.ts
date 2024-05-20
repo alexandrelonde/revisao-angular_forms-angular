@@ -14,7 +14,10 @@ export class TemplateFormComponent {
     cep: null,
     numero: null,
     complemento: null,
-    rua: null
+    rua: null,
+    bairro: null,
+    cidade: null,
+    estado: null
   }
 
   constructor(){

@@ -102,7 +102,6 @@
       class="form-control"
       name="rua"
       id="rua"
-      placeholder="Rua"
       [(ngModel)]="usuario.rua"
       required
       #rua="ngModel"
@@ -111,6 +110,61 @@
 
     <div *ngIf="!rua.valid && rua.touched" class="invalid-feedback">
       Rua é obrigatório!
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-5 mb-3">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input
+        type="text"
+        class="form-control"
+        id="bairro"
+        name="bairro"
+        [(ngModel)]="usuario.bairro"
+        required
+        #bairro="ngModel"
+        [class.is-invalid]="!bairro.valid && bairro.touched"
+      />
+      <div *ngIf="!bairro.valid && bairro.touched" class="invalid-feedback">
+        Bairro é obrigatório!
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cidade"
+        name="cidade"
+        [(ngModel)]="usuario.cidade"
+        required
+        #cidade="ngModel"
+        [class.is-invalid]="!cidade.valid && cidade.touched"
+      />
+      <div *ngIf="!cidade.valid && cidade.touched" class="invalid-feedback">
+        Cidade é obrigatório!
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="estado" class="form-label">Estado</label>
+      <input
+        type="text"
+        class="form-control"
+        id="estado"
+        name="estado"
+        [(ngModel)]="usuario.estado"
+        required
+        #estado="ngModel"
+        [class.is-invalid]="!estado.valid && estado.touched"
+      />
+      <div *ngIf="!estado.valid && estado.touched" class="invalid-feedback">
+        Estado é obrigatório!
+      </div>
     </div>
 
   </div>
