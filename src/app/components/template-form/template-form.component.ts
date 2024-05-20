@@ -12,7 +12,9 @@ export class TemplateFormComponent {
     nome: null,
     email: null,
     cep: null,
-    numero: null
+    numero: null,
+    complemento: null,
+    rua: null
   }
 
   constructor(){

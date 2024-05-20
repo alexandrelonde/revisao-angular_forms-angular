@@ -79,6 +79,40 @@
       </div>
     </div>
 
+    <div class="col-md-6 mb-3">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input
+        type="text"
+        class="form-control"
+        id="complemento"
+        name="complemento"
+        [(ngModel)]="usuario.complemento"
+        #complemento="ngModel"
+      />
+    </div>
+
+  </div>
+
+  <div class="mb-3">
+
+    <label for="rua" class="form-label">Rua</label>
+
+    <input
+      type="rua"
+      class="form-control"
+      name="rua"
+      id="rua"
+      placeholder="Rua"
+      [(ngModel)]="usuario.rua"
+      required
+      #rua="ngModel"
+      [class.is-invalid]="!rua.valid && rua.touched"
+    />
+
+    <div *ngIf="!rua.valid && rua.touched" class="invalid-feedback">
+      Rua é obrigatório!
+    </div>
+
   </div>
 
   <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
