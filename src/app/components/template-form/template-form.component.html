@@ -50,6 +50,11 @@
           [(ngModel)]="usuario.cep"
           required
           #cep="ngModel"
+
+          (blur)="consultaCEP(cep.value, f)"
+
+
+
           [class.is-invalid]="!cep.valid && cep.touched"
         />
         <div *ngIf="!cep.valid && cep.touched" class="invalid-feedback">
