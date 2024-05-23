@@ -11,6 +11,7 @@ export class FormDebugComponent {
 
   // Variável form por input que virá de outro component
   // Utilização de union types para reutilizar o componente
-  @Input() form?: NgForm | FormGroup;
+  // Utilizando any para simplificar o contexto trabalhando com ambos formulários
+  @Input() form?: any;
 
 }
