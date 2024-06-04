@@ -13,12 +13,12 @@ export class DataFormComponent implements OnInit {
   formulario!: FormGroup;
 
   constructor(
-    private forbuilder: FormBuilder,
+    private formbuilder: FormBuilder,
     private httpClient: HttpClient
   ) {}
 
   ngOnInit() {
-    this.formulario = this.forbuilder.group({
+    this.formulario = this.formbuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
     });

@@ -7,7 +7,11 @@
       formControlName="nome"
       id="nome"
       placeholder="Nome"
+      [class.is-invalid]="formulario.get('nome')?.invalid && formulario.get('nome')?.touched"
     />
+    <div *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched" class="invalid-feedback">
+      Nome é obrigatório!
+    </div>
   </div>
 
 
@@ -20,12 +24,16 @@
       formControlName="email"
       id="email"
       placeholder="nome@email.com"
+      [class.is-invalid]="formulario.get('email')?.invalid && formulario.get('email')?.touched"
     />
+    <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched" class="invalid-feedback">
+      Email é obrigatório!
+    </div>
   </div>
 
 
 
-  <button type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">
     Submit
   </button>
 
